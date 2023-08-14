@@ -41,6 +41,8 @@ consumer.Received += (model, ea) =>
 
     var body = ea.Body.ToArray();
     var props = ea.BasicProperties;
+
+    // Construct a completely empty properties.
     var replyProps = channel.CreateBasicProperties();
     replyProps.CorrelationId = props.CorrelationId;
 
